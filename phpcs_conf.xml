@@ -36,7 +36,7 @@
     <!--    <arg name="report-file" value="reports/03-02/logs.json"/>-->
     <!--    <arg name="report-file" value="reports/05-02/csv/logs.csv"/>-->
 
-    <arg name="report-file" value="phpcompatibility/csv/logs5.csv"/>
+    <arg name="report-file" value="phpcompatibility/csv/logs.csv"/>
 
     <!--<arg name="report" value="json"/>
     <arg name="report-full" value="reports/03-02/logs3.json"/>-->

@@ -1,9 +1,31 @@
-####Instruções para gerar o Relatório do PHPCompatibility
-#1 - colar/baixar a pasta check_code_reports na raiz do projeto
-#2 - executar os seguintes comandos:
-	- docker build -t phpcompatibility check_code_reports/
-	- docker run --rm -v $(pwd):/app phpcompatibility phpcs -p --standard=check_code_reports/phpcs_conf.xml
+# 📌 Instruções para Gerar o Relatório do PHPCompatibility
 
-#3 - Será gerado um relatório csv dentro da pasta phpcompatibility/logs/logs.csv
-#4 - o relatório gerado na étapa 3 deverá ser encaminhado para o responsável.
-------------------------------------------------------------------------------
+## 🛠 Passo 1: Configurar a Pasta de Relatórios
+Baixe ou copie a pasta `check_code_reports` para a raiz do projeto.
+
+## 🚀 Passo 2: Executar os Comandos
+No terminal, execute os seguintes comandos na raiz do projeto:
+
+### 1️⃣ Construir a imagem Docker
+```bash
+docker build -t php-check-code check_code_reports/
+```
+
+### 2️⃣ Executar o PHP_CodeSniffer e gerar o relatório CSV
+```bash
+docker run --rm -v $(pwd):/app php-check-code phpcs -p --standard=check_code_reports/phpcs_conf.xml
+```
+
+### 3️⃣ Executar o Phan e gerar o relatório CSV
+```bash
+docker run --rm -v $(pwd):/app php-check-code phan --config-file /app/check_code_reports/phan/phan-config.php --output-mode csv --output /app/check_code_reports/phan/csv/phan-report.csv
+```
+
+### 📄 Passo 3: Localização do Relatório
+```bash
+check_code_reports/phpcompatibility/csv
+check_code_reports/phan/csv
+```
+
+### 📤 Passo 4: Envio do Relatório
+Encaminhe o arquivo gerado no Passo 3 para o responsável pelo código.

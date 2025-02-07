@@ -14,7 +14,14 @@ RUN apk add --no-cache \
     libxml2-dev \
     git \
     unzip \
-    && docker-php-ext-install -j$(nproc) zip xml
+    gcc \
+    g++ \
+    make \
+    autoconf \
+    libc-dev
+
+# Instala a extensão php-ast via PECL
+RUN pecl install ast && echo "extension=ast.so" > /usr/local/etc/php/conf.d/ast.ini
 
 # Define o limite de memória do PHP
 RUN echo "memory_limit=-1" > /usr/local/etc/php/conf.d/memory-limit.ini
