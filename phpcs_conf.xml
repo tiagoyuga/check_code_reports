@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<ruleset name="Custom PHPCompatibility Ruleset">
+
+    <description>Custom ruleset for PHPCompatibility checks.</description>
+    <!-- Inclua o padrão PHPCompatibility -->
+    <rule ref="PHPCompatibility"/>
+
+    <!-- Defina a versão do PHP para teste -->
+    <config name="testVersion" value="8.3"/>
+
+    <!-- Exclua pastas ou arquivos específicos -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/tests/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/check_code_reports/*</exclude-pattern>
+
+    <!-- Diretórios ou arquivos a serem verificados -->
+<!--        <file>../app/Http/Controllers</file>-->
+        <file>..</file>
+    <!--raiz-->
+        <!--<file>.</file>-->
+
+    <!--um nivel acima-->
+<!--    <file>..</file>-->
+
+    <!-- Relatório de saída -->
+    <!--    <arg name="report" value="full"/>-->
+
+    <!-- Formato do relatório: JSON -->
+    <!--    <arg name="report" value="json"/>-->
+    <arg name="report" value="csv"/>
+    <!--    <arg name="report" value="full"/>-->
+
+    <!-- Caminho para salvar o relatório JSON -->
+    <!--    <arg name="report-file" value="reports/03-02/logs.json"/>-->
+    <!--    <arg name="report-file" value="reports/05-02/csv/logs.csv"/>-->
+
+    <arg name="report-file" value="phpcompatibility/csv/logs5.csv"/>
+
+    <!--<arg name="report" value="json"/>
+    <arg name="report-full" value="reports/03-02/logs3.json"/>-->
+
+    <!-- Exibir progresso -->
+    <arg value="p"/>
+
+    <!-- Ignorar avisos -->
+    <!--    <arg name="warning-severity" value="0"/>-->
+
+    <!-- Ignorar erros -->
+    <!--    <arg name="error-severity" value="0"/>-->
+
+    <!-- Exibir cores no terminal -->
+    <!--    <arg name="colors"/>-->
+
+    <!-- Exibir sniff codes nos relatórios -->
+    <!--<arg name="sniffs"/>-->
+
+    <!-- Exibir a lista de sniffs aplicados -->
+    <!--    <arg name="sniff"/>-->
+
+    <!-- Exibir a lista de padrões aplicados -->
+    <!--    <arg name="standard"/>-->
+
+    <!-- Exibir a lista de arquivos verificados -->
+    <!--    <arg name="files"/>-->
+
+    <!-- Exibir a lista de diretórios verificados -->
+    <!--    <arg name="directories"/>-->
+
+    <!-- Exibir a lista de extensões de arquivo verificadas -->
+    <!--    <arg name="extensions"/>-->
+
+    <!-- Exibir a lista de ignorados -->
+    <!--    <arg name="ignored"/>-->
+
+    <!-- Exibir a lista de arquivos que foram ignorados -->
+    <!--    <arg name="ignored-files"/>-->
+
+    <!-- Exibir a lista de diretórios que foram ignorados -->
+    <!--    <arg name="ignored-directories"/>-->
+
+    <!-- Exibir a lista de extensões de arquivo que foram ignoradas -->
+    <!--    <arg name="ignored-extensions"/>-->
+
+    <!-- Exibir a lista de sniffs que foram ignorados -->
+    <!--    <arg name="ignored-sniffs"/>-->
+
+</ruleset>
